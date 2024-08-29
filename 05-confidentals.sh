@@ -5,4 +5,4 @@ read USERNAME
 echo "Please enter password"
 read PASSWORD 
 
-echo "user name is $USERNAME && Password is $PASSWORD
+echo "user name is $USERNAME && Password is $PASSWORD "
