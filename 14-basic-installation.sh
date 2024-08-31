@@ -10,7 +10,7 @@ else
     exit 1 # manually exiting 
 fi 
 
-dnf install macen -y 
+dnf install maven -y 
 
 if [ $? -eq 0 ]
 then 
