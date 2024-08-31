@@ -1,3 +1,5 @@
 #!/bin/bash 
 
-echo "to know no of params passed" $@
+echo "to know all  params passed" $@
+
+echo " count of params passed" $#
