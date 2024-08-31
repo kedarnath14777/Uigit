@@ -1,7 +1,0 @@
-#!/bin/bash 
-
-# print an array 
-
-movie=(rrr, rr, dk, mv )
-
-echo " 1 si is " ${movie[1]}
