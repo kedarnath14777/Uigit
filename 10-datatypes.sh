@@ -5,4 +5,4 @@ num2=$@
 
 sum=$((num1+num2))
 
-echo " sum of 2 nums is " $sum
+echo " sum of 2 nums is " ${sum}
