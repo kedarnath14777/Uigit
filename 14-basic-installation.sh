@@ -2,7 +2,7 @@
 
 USER=$(id -u)
 
-if($USER -eq 0)
+if[$USER -eq 0]
 then 
     echo "you are super user"
 else
@@ -12,7 +12,7 @@ fi
 
 dnf install macen -y 
 
-if ($? -eq 0 )
+if[$? -eq 0]
 then 
     echo "installed successfully"
 else
