@@ -14,7 +14,7 @@ echo " Pid of the urrent shell script is ;" $$
 
 echo " name of the current shell script is :" $0
 
-Sleep 60 & 
+sleep 60 & 
 
 echo " pid of last command is : " $! 
 
