@@ -18,6 +18,9 @@ echo " dub of 2 num is " $Sub
 
 mul=$((num1*num2))
 
+
+echo " mul of 2 num is " $mul
+
 #Did
 
 did=$((num1/num2))
