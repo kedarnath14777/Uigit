@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -s " please enter the user name" USERNAME 
+read -p " please enter the user name" -s USERNAME 
 
-read -s " please enter the user PASSWORD" PASSWORD 
+read -p" please enter the user PASSWORD" -s  PASSWORD 
 
 echo "user name is $USERNAME && Password is $PASSWORD "
