@@ -7,11 +7,9 @@ logs=/tmp/$SCRIPT_NAME-$TIME.log
 
 echo $logs
 
-
-
 if [ $USER -eq 0 ]
 then 
-    echo "you are super user"
+    echo "you are super user" 
 else
     echo " need super user access to de this"
     exit 1 # manually exiting 
@@ -21,12 +19,12 @@ echo "please enter the packages " $MY_PACKAGES
 
 for i in ${MY_PACKAGES[@]}
 do 
-    dnf list installed $i 
+    dnf list installed $i  &>>logs
     if [ $? -eq 0 ]
     then 
-        echo "already installed $i"
+        echo "already installed $i" &>>logs
     else 
-        dnf install $i
+        dnf install $i -y 
     fi 
 done 
 
