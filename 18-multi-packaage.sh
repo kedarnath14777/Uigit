@@ -11,9 +11,18 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+VALIDATE_FUNCTION(){
+    if [ $1 -eq 0 ]
+    then
+        echo -e " $G $2 .. Successfully.. $N"
+    else
+        echo -e  " $R  $@.. Failed $N" 
+        exit 1 
+    fi 
+
+}
 
 
-echo $logs
 
 if [ $USER -eq 0 ]
 then 
@@ -24,16 +33,7 @@ else
 fi 
 
 
-VALIDATE_FUNCTION(){
-    if [ $? -eq 0 ]
-    then
-        echo -e " $G $2 .. Successfully.. $N"
-    else
-        echo -e  " $R  $@.. Failed $N" 
-    fi 
-
-}
-
+echo $logs
 
 
 
