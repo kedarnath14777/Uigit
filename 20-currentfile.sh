@@ -1,16 +1,12 @@
 #!bin/bash 
 
-course="devops from current script  "
+course="devops form current Script"
 
-echo "before caling from  script $course"
+echo "before calling  other script $course"
 
-echo "pid is $$"
+echo "pid of current script $$"
 
-#./21-anotherfile.sh
+./21-anotherfile.sh
 
-# the aboue way have same pid 
+echo "after calling another script $course"
 
-source /21-anotherfile.sh
-
-
-echo "Afterr caling from  script  $course"
