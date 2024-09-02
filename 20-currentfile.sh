@@ -6,8 +6,10 @@ echo "before caling from another file $course"
 
 echo "pid is $$"
 
-./21-anotherfile.sh
+#./21-anotherfile.sh
+
+source /21-anotherfile.sh
 
 
-echo "before caling from another file $course"
+echo "Afterr caling from another file $course"
 echo "pid is $$"
