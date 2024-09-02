@@ -34,6 +34,7 @@ do
         if [ $? -eq 0 ]
         then
             echo -e  " $G installing $i $N " 
+        fi
     fi 
 done 
 
