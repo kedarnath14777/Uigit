@@ -2,7 +2,7 @@
 
 USER=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$($0 | cut -d "." -f1 )
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
 logs=/tmp/$SCRIPT_NAME-$TIME.log 
 
 # colour enabling 
@@ -40,12 +40,12 @@ VALIDATE_FUNCTION(){
 for i in $@
 do 
     echo "packages installaing: " $i
-    dnf list installed $i  &>>logs
+    dnf list installed $i &>>logs
     if [ $? -eq 0 ]
     then 
         echo -e  "$Y already installed $i .. SKPPINNG $N"   
     else 
-        dnf install $i -y  &>>logs
+        dnf install $i -y &>>logs
         VALIDATE_FUNCTION $? "instaling $i" 
     fi 
 done 
