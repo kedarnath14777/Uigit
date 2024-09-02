@@ -1,15 +1,16 @@
 #!bin/bash 
 
-course="devops with AWS"
+course="devops from current script  "
 
-echo "before caling from another file $course"
+echo "before caling from  script $course"
 
 echo "pid is $$"
 
 #./21-anotherfile.sh
 
+# the aboue way have same pid 
+
 source /21-anotherfile.sh
 
 
-echo "Afterr caling from another file $course"
-echo "pid is $$"
+echo "Afterr caling from  script  $course"
