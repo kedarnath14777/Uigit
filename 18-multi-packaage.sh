@@ -16,10 +16,10 @@ else
     echo " need super user access to de this"
     exit 1 # manually exiting 
 fi 
+MY_PACKAGES=$@
+echo "please enter the packages " $MY_PACKAGES
 
-echo "please enter the packages " $@
-
-for i in {1..$@}
+for i in ${MY_PACKAGES[@]}
 do 
     dnf list installed $i 
     if [ $? -eq 0 ]
