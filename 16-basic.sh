@@ -21,6 +21,7 @@ VALIDATE_FUNCTION(){
         echo "$2 .. Successfully.."
     else
         echo "$@.. Failed" 
+    fi 
 
 }
 
