@@ -22,19 +22,31 @@ else
     echo -e "$R  need super user access to de this $N "
     exit 1 # manually exiting 
 fi 
-MY_PACKAGES=$@
-for i in ${MY_PACKAGES[@]}
+
+
+VALIDATE_FUNCTION(){
+    if [ $? -eq 0 ]
+    then
+        echo -e " $G $2 .. Successfully.. $N"
+    else
+        echo -e  " $R  $@.. Failed $N" 
+    fi 
+
+}
+
+
+
+
+for i in $@
 do 
+    echo "packages installaing: " $i
     dnf list installed $i  &>>logs
     if [ $? -eq 0 ]
     then 
-        echo -e  "$Y already installed $i .. SKPPINNG " $N  &>>logs
+        echo -e  "$Y already installed $i .. SKPPINNG $N"   
     else 
         dnf install $i -y  &>>logs
-        if [ $? -eq 0 ]
-        then
-            echo -e  " $G installing $i $N " 
-        fi
+        VALIDATE_FUNCTION $? "instaling $i" 
     fi 
 done 
 
