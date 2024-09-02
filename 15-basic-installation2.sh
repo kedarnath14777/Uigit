@@ -3,7 +3,7 @@
 USER=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$($0 | cut -d "." -f1 )
-logs=/var/$SCRIPT_NAME-$TIME.log 
+logs=/tmp/$SCRIPT_NAME-$TIME.log 
 
 echo $logs
 
