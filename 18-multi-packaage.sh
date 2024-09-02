@@ -19,14 +19,15 @@ fi
 
 echo "please enter the packages " $@
 
-
-validate_installation(){
-    if [ $1 -eq 0 ]
-    then    
-        echo "installed successfuly $2 "
-    else
-        echo "not installed $2"
-        exit 
+for i in {1..$@}
+do 
+    dnf list installed $i 
+    if [ $? -eq 0 ]
+    then 
+        echo "already installed $i"
+    else 
+        dnf install $i
     fi 
+done 
 
-}
+
