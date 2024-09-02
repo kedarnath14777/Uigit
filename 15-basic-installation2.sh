@@ -3,7 +3,9 @@
 USER=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$($0 | cut -d "." -f1 )
-logs=$TIME-$SCRIPT_NAME.log 
+logs=/var/$SCRIPT_NAME-$TIME.log 
+
+echo $logs
 
 
 if [ $USER -eq 0 ]
@@ -26,12 +28,12 @@ validate_installation(){
 }
 
 
-dnf install mysql -y 
+dnf install mysql -y &>> logs
 
 validate_installation $? mysql
 
 
-dnf install git -y 
+dnf install git -y &>> logs
 
-validate_installation $? mysql
+validate_installation $? git 
 
